@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Resume Screener</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <h1 class="mb-4">Resume Screener</h1>
+      {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+      {% endif %}
+      <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label">Upload Resume (PDF / DOCX / TXT)</label>
+          <input class="form-control" type="file" name="resume" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Job Description / Required Skills</label>
+          <textarea name="jobdesc" rows="6" class="form-control" placeholder="Paste JD or required skills (e.g. Python, Flask, AWS)"></textarea>
+        </div>
+        <button class="btn btn-primary">Screen Resume</button>
+      </form>
+    </div>
+  </body>
+</html>
